@@ -147,18 +147,23 @@ void i2cInputEvent(int id, int event, int time){
 }
 
 void signal_handler(int signal_num) {
+    if(signal_num == SIGTERM) {
+        std::cout << "Caught SIGTERM signal, lets exit." << std::endl;
+        exiting = 1;
+    }    
     if(signal_num == SIGINT) {
         std::cout << "Caught SIGINT signal" << std::endl;
-        exiting = 1;
+        exiting = 2;
     }
     else if(signal_num == SIGKILL) {
         std::cout << "Caught SIGKILL signal" << std::endl;
-        exiting = 2;
+        exiting = 3;
     }
 }
 
 int main()
 {
+    signal(SIGTERM, signal_handler);
     signal(SIGINT, signal_handler);
     signal(SIGKILL, signal_handler);
 

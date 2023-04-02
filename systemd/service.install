@@ -1,0 +1,5 @@
+ln -s $(pwd)/LedButtonsDriver.service /etc/systemd/system/LedButtonsDriver.service 
+
+systemctl daemon-reload
+systemctl enable LedButtonsDriver.service
+systemctl start LedButtonsDriver.service

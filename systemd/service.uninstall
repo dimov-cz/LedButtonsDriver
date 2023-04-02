@@ -1,0 +1,7 @@
+systemctl stop LedButtonsDriver.service
+systemctl disable LedButtonsDriver.service
+systemctl daemon-reload
+
+rm /etc/systemd/system/LedButtonsDriver.service 
+
+

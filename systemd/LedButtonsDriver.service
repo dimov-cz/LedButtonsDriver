@@ -1,0 +1,11 @@
+[Unit]
+Description=LedButtonsDriver
+
+[Service]
+ExecStart=/opt/LedButtonsDriver/ledButtonsDriverDaemon
+Environment="LD_SOCKET=/run/ledButtonsDriver.sock"
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
