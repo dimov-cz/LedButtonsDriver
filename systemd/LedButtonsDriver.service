@@ -6,6 +6,9 @@ ExecStart=/opt/LedButtonsDriver/ledButtonsDriverDaemon
 Environment="LD_SOCKET=/run/ledButtonsDriver.sock"
 Restart=always
 User=root
+Nice=-20
+CPUSchedulingPolicy=fifo
+CPUSchedulingPriority=99
 
 [Install]
 WantedBy=multi-user.target

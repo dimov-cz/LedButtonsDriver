@@ -14,3 +14,7 @@ run:
 	#avoid core 2?
 	sudo taskset -c 0,3  chrt 99 ./ledButtonsDriverDaemon
 	#sudo taskset -c 2  chrt 99 ./test123
+
+reinstall:
+	systemd/service.uninstall
+	systemd/service.install

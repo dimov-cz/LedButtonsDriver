@@ -67,7 +67,7 @@ void initAnimators()
         ledState.ww = 255;
         animators[i].UpdateMode1(ledState);
         animators[i].SetLevel(25);
-        animators[i].SetMode(1);//preset 1 will be default state
+        animators[i].SetMode(9);//preset 9 - loading state
     }
     unfreezeTime();
 }

@@ -1,4 +1,8 @@
-ln -s $(pwd)/LedButtonsDriver.service /etc/systemd/system/LedButtonsDriver.service 
+#!/usr/bin/env bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd ) #"
+
+ln -s "$SCRIPT_DIR/LedButtonsDriver.service" "/etc/systemd/system/LedButtonsDriver.service"
 
 systemctl daemon-reload
 systemctl enable LedButtonsDriver.service
